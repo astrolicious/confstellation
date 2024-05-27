@@ -1,0 +1,17 @@
+{
+  "name": "demo",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "4.9.2",
+    "@astrolicious/confstellation": "workspace:^"
+  }
+}

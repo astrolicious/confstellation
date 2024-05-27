@@ -1,0 +1,26 @@
+projects:
+  # site: 'apps/site'
+  demo: 'apps/demo'
+  lib: 'libs/confstellation'
+
+# codeowners:
+#   syncOnRun: true
+#   orderBy: project-name
+#   globalPaths:
+#     '*': ['@alexanderniebuhr']
+
+vcs:
+  manager: git
+  provider: github
+  defaultBranch: 'main'
+  remoteCandidates:
+    - "origin"
+    - "upstream"
+
+runner:
+  inheritColorsForPipedTasks: true
+
+experiments:
+  taskOutputBoundaries: true
+
+telemetry: true
