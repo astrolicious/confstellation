@@ -1,13 +1,37 @@
 {
   "name": "@astrolicious/confstellation",
+  "description": "A Conference solution built for Astro.",
   "version": "0.0.1",
   "license": "MIT",
   "type": "module",
-  "scripts": {},
+  "keywords": ["astro-integration"],
+  "homepage": "https://github.com/UserName/theme-playground",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UserName/@astrolicious/confstellation",
+    "directory": "package"
+  },
+  "exports": {
+    ".": {
+      "default": "./index.ts"
+    },
+    "./actions": {
+      "types": "./actions.ts",
+      "default": "./actions.ts"
+    },
+    "./schema": {
+      "types": "./schema.ts",
+      "default": "./schema.ts"
+    }
+  },
+  "scripts": {
+    "astro": "astro"
+  },
   "devDependencies": {
     "astro": "4.9.2"
   },
   "dependencies": {
-    "astro-theme-provider": "0.5.0"
+    "astro-theme-provider": "0.5.0",
+    "@astrojs/mdx": "3.0.1"
   }
 }

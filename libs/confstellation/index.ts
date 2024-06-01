@@ -1,10 +1,19 @@
 import defineTheme from 'astro-theme-provider';
 import { z } from 'astro/zod';
+import mdx from '@astrojs/mdx';
 
 export default defineTheme({
-	name: '@astrolicious/confstellation',
+	name: 'confstellation',
 	schema: z.object({
-		title: z.string(),
-		description: z.string().optional(),
+		conferenceName: z.string(),
+		conferenceSlogan: z.string().optional(),
+		conferenceDate: z.string().datetime(),
+		nav: z.array(
+			z.object({
+				label: z.string(),
+				link: z.string(),
+			})
+		),
 	}),
+	integrations: [mdx()],
 });

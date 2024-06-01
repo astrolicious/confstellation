@@ -11,7 +11,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "4.9.2",
-    "@astrolicious/confstellation": "workspace:^"
+    "@astrojs/cloudflare": "10.1.0",
+    "@astrolicious/confstellation": "workspace:^",
+    "astro": "4.9.2"
+  },
+  "devDependencies": {
+    "wrangler": "3.58.0"
   }
 }

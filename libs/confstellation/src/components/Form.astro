@@ -1,0 +1,32 @@
+---
+
+---
+
+<form id="form">
+  <label for="email">Subscribe to our mailing list</label>
+  <input type="email" name="email" placeholder="email address" required />
+  <input type="submit" value="Subscribe" name="subscribe" />
+</form>
+
+<script>
+  import { actions } from "astro:actions";
+  addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const { data, error } = await actions.subscribe.safe(formData);
+    const el = document.getElementById("form");
+    if (el && data?.success) {
+      el.innerHTML = "Thank you for subscribing!";
+    }
+  });
+</script>
+
+<style>
+  form {
+    font-family: sans-serif;
+    font-size: var(--step-1);
+  }
+
+  input[type="email"] {
+  }
+</style>

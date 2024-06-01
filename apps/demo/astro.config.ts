@@ -1,15 +1,37 @@
+import Confstellation from '@astrolicious/confstellation';
 import { defineConfig } from 'astro/config';
-import MyTheme from '@astrolicious/confstellation';
+import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
+	output: 'server',
+	adapter: cloudflare({
+		platformProxy: {
+			enabled: true,
+		},
+	}),
+	experimental: {
+		actions: true,
+	},
 	integrations: [
-		MyTheme({
+		Confstellation({
 			config: {
-				title: 'My Awesome Theme',
-				description: 'My awesome theme is currently under construction!',
+				conferenceName: 'Astro',
+				conferenceSlogan: 'The best conference ever',
+				conferenceDate: '2024-09-01T14:00:00Z',
+				nav: [
+					{ label: 'Home', link: '/' },
+					{ label: 'Code of Conduct', link: '/documentation/code-of-conduct' },
+				],
 			},
 			pages: {},
-			overrides: {},
+			overrides: {
+				styles: ['./src/styles/overrides.css'],
+			},
 		}),
 	],
+	vite: {
+		ssr: {
+			external: ['node:async_hooks'],
+		},
+	},
 });

@@ -1,9 +1,9 @@
 {
   "extends": "../../.config/tsconfig.json",
-  "include": ["**/*"],
   "references": [],
   "compilerOptions": {
-    "outDir": "../../.moon/cache/types/lib/confstellation",
-    "paths": {}
+    "outDir": "../../.moon/cache/types/libs/confstellation",
+    "paths": {},
+    "types": ["../../apps/demo/src/env.d.ts"]
   }
 }

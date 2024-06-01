@@ -1,0 +1,285 @@
+@layer reset {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: unset;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  button {
+    border: unset;
+  }
+
+  img,
+  picture,
+  svg,
+  canvas {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+}
+
+@layer utopia {
+  @layer type {
+    /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+    :root {
+      --step--2: clamp(0.7813rem, 0.7747rem + 0.0326cqi, 0.8rem);
+      --step--1: clamp(0.9375rem, 0.9158rem + 0.1087cqi, 1rem);
+      --step-0: clamp(1.125rem, 1.0815rem + 0.2174cqi, 1.25rem);
+      --step-1: clamp(1.35rem, 1.2761rem + 0.3696cqi, 1.5625rem);
+      --step-2: clamp(1.62rem, 1.5041rem + 0.5793cqi, 1.9531rem);
+      --step-3: clamp(1.944rem, 1.771rem + 0.8651cqi, 2.4414rem);
+      --step-4: clamp(2.3328rem, 2.0827rem + 1.2504cqi, 3.0518rem);
+      --step-5: clamp(2.7994rem, 2.4462rem + 1.7658cqi, 3.8147rem);
+      --step-6: clamp(3.3592rem, 2.8691rem + 2.4507cqi, 4.7684rem);
+    }
+  }
+
+  @layer space {
+    /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+    :root {
+      --space-3xs: clamp(0.3125rem, 0.3125rem + 0cqi, 0.3125rem);
+      --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087cqi, 0.625rem);
+      --space-xs: clamp(0.875rem, 0.8533rem + 0.1087cqi, 0.9375rem);
+      --space-s: clamp(1.125rem, 1.0815rem + 0.2174cqi, 1.25rem);
+      --space-m: clamp(1.6875rem, 1.6223rem + 0.3261cqi, 1.875rem);
+      --space-l: clamp(2.25rem, 2.163rem + 0.4348cqi, 2.5rem);
+      --space-xl: clamp(3.375rem, 3.2446rem + 0.6522cqi, 3.75rem);
+      --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696cqi, 5rem);
+      --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043cqi, 7.5rem);
+
+      /* One-up pairs */
+      --space-3xs-2xs: clamp(0.3125rem, 0.2038rem + 0.5435cqi, 0.625rem);
+      --space-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522cqi, 0.9375rem);
+      --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522cqi, 1.25rem);
+      --space-s-m: clamp(1.125rem, 0.8641rem + 1.3043cqi, 1.875rem);
+      --space-m-l: clamp(1.6875rem, 1.4049rem + 1.413cqi, 2.5rem);
+      --space-l-xl: clamp(2.25rem, 1.7283rem + 2.6087cqi, 3.75rem);
+      --space-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261cqi, 5rem);
+      --space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174cqi, 7.5rem);
+
+      /* Custom pairs */
+      --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913cqi, 2.5rem);
+    }
+  }
+}
+
+@layer harmony {
+  @layer neutral {
+    :root {
+      --neutral-50: #fbfbfb;
+      --neutral-100: #f3f3f3;
+      --neutral-200: #e4e4e4;
+      --neutral-300: #cfcfcf;
+      --neutral-400: #bababa;
+      --neutral-500: #a6a6a6;
+      --neutral-600: #838383;
+      --neutral-700: #6a6a6a;
+      --neutral-800: #4b4b4b;
+      --neutral-900: #2e2e2e;
+      --neutral-950: #141414;
+    }
+
+    @supports (color: oklch(0% 0 0)) {
+      @media (color-gamut: p3) {
+        :root {
+          --neutral-50: oklch(0.988281 0 0);
+          --neutral-100: oklch(0.964844 0 0);
+          --neutral-200: oklch(0.917969 0 0);
+          --neutral-300: oklch(0.853516 0 0);
+          --neutral-400: oklch(0.789063 0 0);
+          --neutral-500: oklch(0.726563 0 0);
+          --neutral-600: oklch(0.611328 0 0);
+          --neutral-700: oklch(0.523438 0 0);
+          --neutral-800: oklch(0.412109 0 0);
+          --neutral-900: oklch(0.300781 0 0);
+          --neutral-950: oklch(0.193359 0 0);
+        }
+      }
+    }
+  }
+
+  @layer cyan {
+    :root {
+      --cyan-50: #f8fcfb;
+      --cyan-100: #e7f7f3;
+      --cyan-200: #c5ece3;
+      --cyan-300: #92ddce;
+      --cyan-400: #51cdb8;
+      --cyan-500: #00b9a3;
+      --cyan-600: #009280;
+      --cyan-700: #007667;
+      --cyan-800: #005348;
+      --cyan-900: #00332c;
+      --cyan-950: #001712;
+    }
+
+    @supports (color: oklch(0% 0 0)) {
+      @media (color-gamut: p3) {
+        :root {
+          --cyan-50: oklch(0.988281 0.0046875 180);
+          --cyan-100: oklch(0.962891 0.0171875 180);
+          --cyan-200: oklch(0.912109 0.0421875 180);
+          --cyan-300: oklch(0.84375 0.078125 180);
+          --cyan-400: oklch(0.773438 0.114063 180);
+          --cyan-500: oklch(0.705078 0.151562 180);
+          --cyan-600: oklch(0.591797 0.135937 180);
+          --cyan-700: oklch(0.505859 0.115625 180);
+          --cyan-800: oklch(0.396484 0.090625 180);
+          --cyan-900: oklch(0.289063 0.065625 180);
+          --cyan-950: oklch(0.181641 0.040625 180);
+        }
+      }
+    }
+  }
+}
+
+@layer confstellation {
+  :root {
+    --confstellation-bg-light: var(--neutral-50);
+    --confstellation-bg-dark: var(--neutral-950);
+    --confstellation-bg: light-dark(var(--confstellation-bg-light), var(--confstellation-bg-dark));
+    --confstellation-accent-light: var(--cyan-700);
+    --confstellation-accent-dark: var(--cyan-300);
+    --confstellation-accent: light-dark(var(--confstellation-accent-light), var(--confstellation-accent-dark));
+    --confstellation-text-light: black;
+    --confstellation-text-dark: white;
+    --confstellation-text: light-dark(var(--confstellation-text-light), var(--confstellation-text-dark));
+
+    color-scheme: light dark;
+
+    &:has(input[name="color-scheme"][value="light dark"]:checked) {
+      color-scheme: light dark;
+    }
+
+    &:has(input[name="color-scheme"][value="light"]:checked) {
+      color-scheme: light;
+    }
+
+    &:has(input[name="color-scheme"][value="dark"]:checked) {
+      color-scheme: dark;
+    }
+  }
+
+  html {
+    &:focus-within {
+      scroll-behavior: smooth;
+    }
+
+  }
+
+  body {
+    background-color: var(--confstellation-bg);
+    color: var(--confstellation-text);
+    font-family: sans-serif;
+    transition: color 0.4s, background-color 0.4s;
+    font-size: var(--step-0);
+  }
+
+  iconify-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+  }
+
+  @layer prose {
+    :root {
+      --prose-font-family: 'Georgia', serif;
+      --prose-color: #333;
+      --prose-line-height: 1.6;
+      --prose-heading-color: #111;
+      --prose-heading-font-weight: bold;
+      --prose-heading-margin-top: 1.5em;
+      --prose-heading-margin-bottom: 0.5em;
+      --prose-paragraph-margin-bottom: 1em;
+      --prose-link-color: #1a0dab;
+      --prose-link-hover-color: #1a0dab;
+      --prose-link-hover-text-decoration: underline;
+      --prose-blockquote-border-color: #ccc;
+      --prose-blockquote-font-style: italic;
+      --prose-blockquote-padding: 0.5em 1em;
+      --prose-blockquote-margin: 1em 0;
+    }
+
+    .prose {
+      font-family: var(--prose-font-family);
+      color: var(--prose-color);
+      line-height: var(--prose-line-height);
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: var(--prose-heading-color);
+        font-weight: var(--prose-heading-font-weight);
+        margin-top: var(--prose-heading-margin-top);
+        margin-bottom: var(--prose-heading-margin-bottom);
+      }
+
+      p {
+        margin-bottom: var(--prose-paragraph-margin-bottom);
+      }
+
+      a {
+        color: var(--prose-link-color);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--prose-link-hover-color);
+          text-decoration: var(--prose-link-hover-text-decoration);
+        }
+      }
+
+      blockquote {
+        border-left: 4px solid var(--prose-blockquote-border-color);
+        font-style: var(--prose-blockquote-font-style);
+        padding: var(--prose-blockquote-padding);
+        margin: var(--prose-blockquote-margin);
+      }
+
+      ul,
+      ol {
+        padding-left: 1.5em;
+
+        li {
+          margin-bottom: 0.5em;
+        }
+      }
+
+      pre {
+        background: #f6f8fa;
+        padding: 1em;
+        overflow-x: auto;
+
+        code {
+          font-family: 'Courier New', Courier, monospace;
+          background: none;
+          padding: 0;
+        }
+      }
+
+      code {
+        font-family: 'Courier New', Courier, monospace;
+        background: #f6f8fa;
+        padding: 0.2em 0.4em;
+        border-radius: 4px;
+      }
+    }
+  }
+}

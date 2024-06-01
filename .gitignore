@@ -1,3 +1,10 @@
+# Astro
+.astro
+
+# Moon
+.moon/cache
+.moon/docker
+
 # Logs
 logs
 *.log
