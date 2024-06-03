@@ -6,9 +6,6 @@
       "path": "apps/demo"
     },
     {
-      "path": "apps/site"
-    },
-    {
       "path": "libs/confstellation"
     }
   ]

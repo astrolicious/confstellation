@@ -7,8 +7,14 @@ node:
   syncProjectWorkspaceDependencies: true
   syncVersionManagerConfig: nodenv
 
-typescript: 
+typescript:
   createMissingConfig: true
+  includeProjectReferenceSources: true
+  includeSharedTypes: false # true
+  projectConfigFileName: 'tsconfig.json'
+  root: '.'
+  rootConfigFileName: 'tsconfig.json'
+  rootOptionsConfigFileName: '.config/tsconfig.json'
   routeOutDirToCache: true
   syncProjectReferences: true
   syncProjectReferencesToPaths: true

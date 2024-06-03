@@ -1,6 +1,6 @@
 {
   "extends": "../../.config/tsconfig.json",
-  "include": ["**/*"],
+  "include": ["**/*", "../../libs/confstellation/**/*"],
   "references": [
     {
       "path": "../../libs/confstellation"

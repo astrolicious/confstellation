@@ -2,6 +2,9 @@ type: application
 language: typescript
 stack: frontend
 
+dependsOn:
+  - lib
+
 fileGroups:
   sources:
     - "public/**/*"

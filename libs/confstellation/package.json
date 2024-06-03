@@ -11,6 +11,9 @@
     "url": "https://github.com/UserName/@astrolicious/confstellation",
     "directory": "package"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "default": "./index.ts"
