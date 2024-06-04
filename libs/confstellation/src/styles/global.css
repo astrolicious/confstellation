@@ -6,7 +6,9 @@
     box-sizing: border-box;
   }
 
-  body {
+  body,
+  ul,
+  li {
     margin: unset;
   }
 
@@ -194,92 +196,5 @@
     display: inline-block;
     width: 1em;
     height: 1em;
-  }
-
-  @layer prose {
-    :root {
-      --prose-font-family: 'Georgia', serif;
-      --prose-color: #333;
-      --prose-line-height: 1.6;
-      --prose-heading-color: #111;
-      --prose-heading-font-weight: bold;
-      --prose-heading-margin-top: 1.5em;
-      --prose-heading-margin-bottom: 0.5em;
-      --prose-paragraph-margin-bottom: 1em;
-      --prose-link-color: #1a0dab;
-      --prose-link-hover-color: #1a0dab;
-      --prose-link-hover-text-decoration: underline;
-      --prose-blockquote-border-color: #ccc;
-      --prose-blockquote-font-style: italic;
-      --prose-blockquote-padding: 0.5em 1em;
-      --prose-blockquote-margin: 1em 0;
-    }
-
-    .prose {
-      font-family: var(--prose-font-family);
-      color: var(--prose-color);
-      line-height: var(--prose-line-height);
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        color: var(--prose-heading-color);
-        font-weight: var(--prose-heading-font-weight);
-        margin-top: var(--prose-heading-margin-top);
-        margin-bottom: var(--prose-heading-margin-bottom);
-      }
-
-      p {
-        margin-bottom: var(--prose-paragraph-margin-bottom);
-      }
-
-      a {
-        color: var(--prose-link-color);
-        text-decoration: none;
-
-        &:hover {
-          color: var(--prose-link-hover-color);
-          text-decoration: var(--prose-link-hover-text-decoration);
-        }
-      }
-
-      blockquote {
-        border-left: 4px solid var(--prose-blockquote-border-color);
-        font-style: var(--prose-blockquote-font-style);
-        padding: var(--prose-blockquote-padding);
-        margin: var(--prose-blockquote-margin);
-      }
-
-      ul,
-      ol {
-        padding-left: 1.5em;
-
-        li {
-          margin-bottom: 0.5em;
-        }
-      }
-
-      pre {
-        background: #f6f8fa;
-        padding: 1em;
-        overflow-x: auto;
-
-        code {
-          font-family: 'Courier New', Courier, monospace;
-          background: none;
-          padding: 0;
-        }
-      }
-
-      code {
-        font-family: 'Courier New', Courier, monospace;
-        background: #f6f8fa;
-        padding: 0.2em 0.4em;
-        border-radius: 4px;
-      }
-    }
   }
 }

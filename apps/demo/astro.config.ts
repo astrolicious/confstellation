@@ -11,6 +11,7 @@ export default defineConfig({
 	}),
 	experimental: {
 		actions: true,
+		rewriting: true,
 	},
 	integrations: [
 		Confstellation({

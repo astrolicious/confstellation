@@ -1,20 +1,11 @@
 ---
-import { getCollection } from "astro:content";
+export const prerender = false;
+
+import { ThemeToggle } from "confstellation:components";
 
 import "confstellation:styles";
 
-export const prerender = true;
-
-export async function getStaticPaths() {
-  const documentationEntries = await getCollection("documentation");
-  return documentationEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
-}
-
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+const year = new Date().getFullYear();
 ---
 
 <html lang="en">
@@ -25,15 +16,28 @@ const { Content } = await entry.render();
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{entry.data.title}</title>
+    <title>404</title>
   </head>
   <body>
-    <h1>{entry.data.title}</h1>
-    <div class="prose">
-      <Content />
-    </div>
+    <header>
+      <ThemeToggle />
+    </header>
+
+    <main>
+      Page not found
+      <a href="/">Back home</a>
+    </main>
+    <footer>
+      <p>
+        &copy; <span id="footer-year">{year}</span> - All rights reserved
+      </p>
+    </footer>
   </body>
 </html>
+
+<script is:inline>
+  document.getElementById("footer-year").innerText = new Date().getFullYear();
+</script>
 
 <style>
   body {

@@ -1,0 +1,105 @@
+---
+export const prerender = false;
+
+import { getEntry } from "astro:content";
+import { ThemeToggle } from "confstellation:components";
+import config from "confstellation:config";
+
+import "confstellation:styles";
+
+const { slug } = Astro.params;
+const entry = await getEntry("confstellation", slug ?? "index");
+if (entry === undefined) {
+  return Astro.rewrite("/404");
+}
+
+const { Content } = await entry.render();
+
+const year = new Date().getFullYear();
+---
+
+<html lang="en">
+  <head>
+    <script
+      src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"
+    ></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{entry.data.title}</title>
+  </head>
+  <body>
+    <header>
+      <ThemeToggle />
+      <nav>
+        <ul>
+          {
+            config.nav.map((n) => {
+              return (
+                <li>
+                  <a href={n.link}>{n.label}</a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <Content />
+    </main>
+    <footer>
+      <p>
+        &copy; <span id="footer-year">{year}</span> - All rights reserved
+      </p>
+    </footer>
+  </body>
+</html>
+
+<script is:inline>
+  document.getElementById("footer-year").innerText = new Date().getFullYear();
+</script>
+
+<style>
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    place-items: center;
+    min-height: 100vh;
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      li {
+        border-radius: var(--space-3xs);
+        a {
+          padding-inline: var(--space-2xs);
+          padding-block: var(--space-2xs);
+          border-radius: var(--space-3xs);
+          display: block;
+          text-decoration: none;
+          color: light-dark(black, white);
+
+          &:hover {
+            background: light-dark(var(--neutral-200), var(--neutral-800));
+          }
+
+          &:focus {
+            background: light-dark(var(--neutral-200), var(--neutral-800));
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    padding-inline: var(--space-xs);
+    padding-block: var(--space-xs);
+    display: flex;
+    justify-content: center;
+    font-size: var(--step--1);
+  }
+</style>

@@ -1,0 +1,26 @@
+---
+title: AstroConf
+hero:
+  name: "AstroConf"
+  tagline: "Everything you need to build a stellar documentation website. Fast, accessible, and easy-to-use."
+  date: "2024-09-16T14:00:00Z"
+  location: "The Internet."
+  actions:
+    - text: "View on Discord"
+      link: https://astro.build/chat
+---
+
+import { Hero, Form } from "confstellation:components";
+
+<Hero hero={frontmatter.hero}>
+  <Fragment slot="actions">
+    {frontmatter.hero.actions.map((action) => (
+      <button>{action.text}</button>
+    ))}
+    <Form />
+  </Fragment>
+</Hero>
+
+## Code of Conduct
+
+Lorem ipsum
