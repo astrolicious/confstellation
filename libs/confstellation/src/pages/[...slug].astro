@@ -30,7 +30,6 @@ const year = new Date().getFullYear();
   </head>
   <body>
     <header>
-      <ThemeToggle />
       <nav>
         <ul>
           {
@@ -44,6 +43,7 @@ const year = new Date().getFullYear();
           }
         </ul>
       </nav>
+      <!-- <ThemeToggle /> -->
     </header>
 
     <main>
@@ -63,21 +63,32 @@ const year = new Date().getFullYear();
 
 <style>
   body {
+    background: linear-gradient(to top right, #0f1c98, #7310a2);
     display: grid;
     grid-template-rows: auto 1fr auto;
     place-items: center;
     min-height: 100vh;
   }
 
+  header {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr auto;
+    padding-block: var(--space-xs);
+    padding-inline: var(--space-m);
+  }
+
   nav {
+    display: flex;
     ul {
       list-style: none;
       display: flex;
+      align-items: center;
+      gap: var(--space-xs);
       li {
         border-radius: var(--space-3xs);
         a {
-          padding-inline: var(--space-2xs);
-          padding-block: var(--space-2xs);
+          padding: var(--space-3xs);
           border-radius: var(--space-3xs);
           display: block;
           text-decoration: none;
@@ -93,6 +104,11 @@ const year = new Date().getFullYear();
         }
       }
     }
+  }
+
+  main {
+    width: 100vw;
+    padding-inline: var(--space-m);
   }
 
   footer {

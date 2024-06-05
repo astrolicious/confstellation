@@ -19,11 +19,17 @@ const { hero } = Astro.props;
         }).format(new Date(hero.date))
       } / {hero.location}
     </div>
-    <slot name="actions" />
+    <div id="actions">
+      <slot name="actions" />
+    </div>
   </section>
 </div>
 
 <style>
+  #actions {
+    display: grid;
+    gap: 0.5rem;
+  }
   #wrapper {
     display: flex;
     flex-direction: column;

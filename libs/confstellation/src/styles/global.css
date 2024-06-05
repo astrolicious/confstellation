@@ -8,8 +8,14 @@
 
   body,
   ul,
-  li {
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
     margin: unset;
+    padding: unset;
   }
 
   button,
@@ -162,7 +168,7 @@
     --confstellation-text-dark: white;
     --confstellation-text: light-dark(var(--confstellation-text-light), var(--confstellation-text-dark));
 
-    color-scheme: light dark;
+    color-scheme: dark;
 
     &:has(input[name="color-scheme"][value="light dark"]:checked) {
       color-scheme: light dark;
