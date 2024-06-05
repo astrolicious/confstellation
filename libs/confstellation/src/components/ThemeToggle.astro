@@ -1,0 +1,53 @@
+---
+
+---
+
+<div>
+  <label>
+    <input type="radio" id="dark" name="color-scheme" value="dark" />
+    <iconify-icon icon="meteocons:starry-night-fill"> </iconify-icon>
+  </label>
+
+  <label>
+    <input
+      type="radio"
+      id="system"
+      name="color-scheme"
+      value="light dark"
+      checked
+    />
+    <iconify-icon icon="meteocons:solar-eclipse-fill"> </iconify-icon>
+  </label>
+
+  <label>
+    <input type="radio" id="light" name="color-scheme" value="light" />
+    <iconify-icon icon="meteocons:clear-day-fill"> </iconify-icon>
+  </label>
+</div>
+
+<style>
+  div {
+    padding-inline: var(--space-xs);
+    padding-block: var(--space-xs);
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3xs);
+    font-size: var(--step-1);
+  }
+
+  label {
+    cursor: pointer;
+    display: inline-grid;
+
+    &:has(input:checked) {
+      background: light-dark(var(--neutral-200), var(--neutral-800));
+      border-radius: var(--space-3xs);
+    }
+  }
+
+  input {
+    &[type="radio"] {
+      display: none;
+    }
+  }
+</style>

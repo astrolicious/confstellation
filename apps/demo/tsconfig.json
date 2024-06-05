@@ -1,0 +1,16 @@
+{
+  "extends": "../../.config/tsconfig.json",
+  "include": ["**/*", "../../libs/confstellation/**/*"],
+  "references": [
+    {
+      "path": "../../libs/confstellation"
+    }
+  ],
+  "compilerOptions": {
+    "outDir": "../../.moon/cache/types/apps/demo",
+    "paths": {
+      "@astrolicious/confstellation": ["../../libs/confstellation/index.ts"],
+      "@astrolicious/confstellation/*": ["../../libs/confstellation/src/*"]
+    }
+  }
+}

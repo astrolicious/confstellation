@@ -1,0 +1,20 @@
+node:
+  packageManager: pnpm
+  addEnginesConstraint: true
+  dedupeOnLockfileChange: true
+  dependencyVersionFormat: workspace
+  inferTasksFromScripts: false
+  syncProjectWorkspaceDependencies: true
+  syncVersionManagerConfig: nodenv
+
+typescript:
+  createMissingConfig: true
+  includeProjectReferenceSources: true
+  includeSharedTypes: false # true
+  projectConfigFileName: 'tsconfig.json'
+  root: '.'
+  rootConfigFileName: 'tsconfig.json'
+  rootOptionsConfigFileName: '.config/tsconfig.json'
+  routeOutDirToCache: true
+  syncProjectReferences: true
+  syncProjectReferencesToPaths: true

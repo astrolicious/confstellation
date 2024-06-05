@@ -1,0 +1,87 @@
+---
+import config from "confstellation:config";
+const time = new Date(config.conferenceDate).getTime();
+---
+
+<div class="countdown" id="wrapper" data-time={time}>
+  <div class="countdown-number" id="days">00</div>
+  <div class="countdown-label">Days</div>
+  <div class="countdown-number" id="hours">00</div>
+  <div class="countdown-label">Hours</div>
+  <div class="countdown-number" id="minutes">00</div>
+  <div class="countdown-label">Minutes</div>
+  <div class="countdown-number" id="seconds">00</div>
+  <div class="countdown-label">Seconds</div>
+</div>
+
+<style>
+  .countdown {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+  .countdown-number {
+    font-size: var(--step-5);
+    margin: 0 10px;
+    color: #333;
+  }
+
+  .countdown-label {
+    font-size: 0.8em;
+    color: #666;
+    margin-right: 20px;
+  }
+
+  .countdown div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
+
+<script>
+  function countdown(targetDate) {
+    const countdownElement = {
+      days: document.getElementById("days"),
+      hours: document.getElementById("hours"),
+      minutes: document.getElementById("minutes"),
+      seconds: document.getElementById("seconds"),
+    };
+
+    function updateCountdown() {
+      const currentTime = new Date().getTime();
+      const timeDifference = targetDate - currentTime;
+
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor(
+        (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      countdownElement.days.textContent = days.toString().padStart(2, "0");
+      countdownElement.hours.textContent = hours.toString().padStart(2, "0");
+      countdownElement.minutes.textContent = minutes
+        .toString()
+        .padStart(2, "0");
+      countdownElement.seconds.textContent = seconds
+        .toString()
+        .padStart(2, "0");
+
+      if (timeDifference < 0) {
+        clearInterval(interval);
+        document.querySelector(".countdown").textContent = "Countdown ended";
+      }
+    }
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+  }
+
+  const targetDate = document.getElementById("wrapper").dataset.time;
+  countdown(targetDate);
+</script>

@@ -1,0 +1,10 @@
+@layer overrides {
+  :root {
+    /* --confstellation-bg-light: var(--neutral-50);
+    --confstellation-bg-dark: var(--neutral-950);
+    --confstellation-accent-light: var(--cyan-700);
+    --confstellation-accent-dark: var(--cyan-300);
+    --confstellation-text-light: black;
+    --confstellation-text-dark: white; */
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "demo",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "10.1.0",
+    "@astrolicious/confstellation": "workspace:^",
+    "astro": "4.9.2"
+  },
+  "devDependencies": {
+    "wrangler": "3.58.0"
+  }
+}
